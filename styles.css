@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    border: 2px solid #000;
+    font-family: 'Arial', sans-serif;
+}
+
+.cell.x::before,
+.cell.circle::before {
+    content: '';
+    display: block;
+}
+
+.cell.x::before {
+    content: 'X';
+    color: hsl(332, 74%, 56%); /* Color rojo para la X */
+}
+
+.cell.circle::before {
+    content: 'O';
+    color: hsl(170, 44%, 49%); /* Color azul para el círculo */
+}
+
+.winning-message {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.winning-message.show {
+    display: flex;
+}
+
+#winningMessageText {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
